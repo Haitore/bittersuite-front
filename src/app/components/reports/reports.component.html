@@ -2,14 +2,14 @@
     <h2>Generar reporte de ventas</h2>
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="startDate">Start Date:</label>
+        <label for="startDate">Fecha inicial:</label>
         <input type="date" id="startDate" class="form-control" [(ngModel)]="startDate" name="startDate" required>
       </div>
       <div class="form-group">
-        <label for="endDate">End Date:</label>
+        <label for="endDate">Fecha final:</label>
         <input type="date" id="endDate" class="form-control" [(ngModel)]="endDate" name="endDate" required>
       </div>
-      <button type="submit" class="btn btn-primary mt-2">Generate Report</button>
+      <button type="submit" class="btn btn-primary mt-2">Generar reporte</button>
     </form>
     <div *ngIf="startDate > endDate" class="card text-white bg-danger mb-3 mt-4">
       <div class="card-body">
