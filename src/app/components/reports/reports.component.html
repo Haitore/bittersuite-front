@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h2>Generar reporte de ventas</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" class="form-control" [(ngModel)]="startDate" name="startDate" required>
+      </div>
+      <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" class="form-control" [(ngModel)]="endDate" name="endDate" required>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Generate Report</button>
+    </form>
+    <div *ngIf="startDate > endDate" class="card text-white bg-danger mb-3 mt-4">
+      <div class="card-body">
+        <h5 class="card-title">Error</h5>
+        <p class="card-text">La fecha de inicio no puede ser mayor que la fecha final.</p>
+      </div>
+    </div>
+  </div>
+  
