@@ -8,10 +8,19 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SalesService } from './services/sales.service';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './views/login/login.component';
+import { SalesComponent } from './views/sales/sales.component';
+import { AddSaleComponent } from './views/add-sale/add-sale.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, ReportsComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  declarations: [AppComponent,
+    LoginComponent,
+    SalesComponent,
+    AddSaleComponent, ReportsComponent],
+  imports: [BrowserModule, AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule, HttpClientModule, FormsModule],
   providers: [
     SalesService,
     {
