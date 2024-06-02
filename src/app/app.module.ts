@@ -7,22 +7,47 @@ import { ReportsComponent } from './views/reports/reports.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SalesService } from './services/sales.service';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
-import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './views/login/login.component';
 import { SalesComponent } from './views/sales/sales.component';
 import { AddSaleComponent } from './views/add-sale/add-sale.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
+import { InventoryService } from './services/inventory.service';
+import { StoresComponent } from './views/stores/stores.component';
+import { StoresService } from './services/stores.service';
 
 @NgModule({
-  declarations: [AppComponent,
+  declarations: [
+    AppComponent,
     LoginComponent,
     SalesComponent,
-    AddSaleComponent, ReportsComponent],
-  imports: [BrowserModule, AppRoutingModule,
+    AddSaleComponent,
+    ReportsComponent,
+    StoresComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule, HttpClientModule, FormsModule],
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [
     SalesService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    AuthService,
+    InventoryService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    StoresService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

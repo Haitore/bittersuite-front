@@ -1,0 +1,23 @@
+<div class="d-flex">
+    <div class="w-100 pt-5">
+      <div class="col-md-10 col-12 mx-auto mb-5 d-flex justify-content-between align-items-center">
+        <h1>Tiendas</h1>
+      </div>
+      <div class="card col-md-10 col-12 mx-auto p-4">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID de tienda</th>
+              <th scope="col">Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let store of stores">
+              <td>{{ store.host_id }}</td>
+              <td>{{ store.name }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

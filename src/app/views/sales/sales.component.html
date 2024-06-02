@@ -2,7 +2,10 @@
   <div class="w-100 pt-5">
     <div class="col-md-10 col-12 mx-auto mb-5 d-flex justify-content-between align-items-center">
       <h1>Ventas</h1>
-      <a type="button" class="btn btn-secondary btn-md py-1" routerLink="/addsale">Agregar venta</a>
+      <div>
+        <a type="button" class="btn btn-secondary btn-md py-1 mx-1" routerLink="/addsale">Agregar venta</a>
+        <a type="button" class="btn btn-secondary btn-md py-1 mx-1" routerLink="/report">Generar reporte</a>
+      </div>  
     </div>
     <div class="card col-md-10 col-12 mx-auto p-4">
       <table class="table table-striped">
@@ -16,11 +19,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let sale of salesData">
+          <tr *ngFor="let sale of sales">
             <th scope="row">{{ sale.sku }}</th>
             <td>{{ sale.name }}</td>
             <td>{{ sale.quantity }}</td>
-            <td>{{ sale.date }}</td>
+            <td>{{ sale.date_sale }}</td>
             <td>{{ sale.total_price }}</td>
           </tr>
         </tbody>
