@@ -15,4 +15,19 @@ export class InventoryService {
     const route = this.baseUrl + '/inventory'
     return this.http.get<any[]>(route)
   }
+
+  deleteProduct(sku: string): Observable<any[]> {
+    const route = this.baseUrl + '/inventory';
+    const options = {
+      body: { sku }
+    };
+    return this.http.request<any[]>('delete', route, options);
+  }
+
+  addProduct(product: any): Observable<any> {
+    console.log(product)
+    const route = this.baseUrl + '/inventory';
+    const body = product
+    return this.http.post<any>(route, body)
+  }
 }

@@ -5,6 +5,8 @@ import { SalesComponent } from './views/sales/sales.component';
 import { AddSaleComponent } from './views/add-sale/add-sale.component';
 import { ReportsComponent } from './views/reports/reports.component';
 import { StoresComponent } from './views/stores/stores.component';
+import { InventoryComponent } from './views/inventory/inventory.component';
+import { AddProductComponent } from './views/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'stores',
     component: StoresComponent
+  },
+  {
+    path: 'inventory',
+    component: InventoryComponent
+  },
+  {
+    path: 'addproduct',
+    component: AddProductComponent
   },
 ];
 

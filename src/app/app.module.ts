@@ -15,6 +15,8 @@ import { AuthService } from './services/auth.service';
 import { InventoryService } from './services/inventory.service';
 import { StoresComponent } from './views/stores/stores.component';
 import { StoresService } from './services/stores.service';
+import { InventoryComponent } from './views/inventory/inventory.component';
+import { AddProductComponent } from './views/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { StoresService } from './services/stores.service';
     AddSaleComponent,
     ReportsComponent,
     StoresComponent,
+    InventoryComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
