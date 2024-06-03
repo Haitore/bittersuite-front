@@ -7,6 +7,7 @@ import { ReportsComponent } from './views/reports/reports.component';
 import { StoresComponent } from './views/stores/stores.component';
 import { InventoryComponent } from './views/inventory/inventory.component';
 import { AddProductComponent } from './views/add-product/add-product.component';
+import { UpdateProductComponent } from './views/update-product/update-product.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'addproduct',
     component: AddProductComponent
+  },
+  {
+    path: 'editproduct/:sku',
+    component: UpdateProductComponent
   },
 ];
 

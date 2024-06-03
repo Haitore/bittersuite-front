@@ -25,9 +25,14 @@ export class InventoryService {
   }
 
   addProduct(product: any): Observable<any> {
-    console.log(product)
     const route = this.baseUrl + '/inventory';
     const body = product
     return this.http.post<any>(route, body)
+  }
+
+  updateProduct(product: any): Observable<any> {
+    const route = this.baseUrl + '/inventory';
+    const body = product
+    return this.http.put<any>(route, body)
   }
 }

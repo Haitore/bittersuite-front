@@ -17,6 +17,7 @@ import { StoresComponent } from './views/stores/stores.component';
 import { StoresService } from './services/stores.service';
 import { InventoryComponent } from './views/inventory/inventory.component';
 import { AddProductComponent } from './views/add-product/add-product.component';
+import { UpdateProductComponent } from './views/update-product/update-product.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AddProductComponent } from './views/add-product/add-product.component';
     StoresComponent,
     InventoryComponent,
     AddProductComponent,
+    UpdateProductComponent,
   ],
   imports: [
     BrowserModule,
