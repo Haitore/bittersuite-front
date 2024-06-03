@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SalesService } from '../../services/sales.service';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reports',
@@ -15,9 +16,13 @@ export class ReportsComponent implements OnInit {
   startDate: string = '';
   endDate: string = '';
 
-  constructor(private salesService: SalesService) {}
+  constructor(private salesService: SalesService, private router: Router) {}
 
   ngOnInit(): void {
+    if (!sessionStorage.getItem('token')) {
+      this.router.navigateByUrl('/');
+    }
+
     this.salesService.getReport().subscribe((data: any[]) => {
       this.sales = data;
     });

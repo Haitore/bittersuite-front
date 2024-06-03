@@ -33,6 +33,10 @@ export class UpdateProductComponent implements OnInit {
   product: any = {};
 
   ngOnInit(): void {
+    if (!sessionStorage.getItem('token')) {
+      this.router.navigateByUrl('/');
+    }
+    
     this.role = parseInt(sessionStorage.getItem('role') || '0', 10);
 
     const sku = this.route.snapshot.paramMap.get('sku');

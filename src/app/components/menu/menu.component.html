@@ -1,11 +1,30 @@
 <nav class="bg-main fixed-nav">
-    <ul>
-      <li *ngFor="let item of menuItems; let i = index" [ngClass]="item.label === 'Cerrar sesion' ? 'ml-auto' : ''">
+  <ul>
+    <ng-container *ngFor="let item of menuItems; let i = index">
+      <!-- Mostrar el elemento solo si el valor de role es 1 -->
+      <li
+        *ngIf="item.label !== 'Tiendas' || hasRoleOne()"
+        [ngClass]="{ 'ml-auto': item.label === 'Cerrar sesion' }"
+      >
         <a [routerLink]="item.link">
-          <img *ngIf="item.label === 'Inicio'" src="assets/logito.png" alt="Inicio" class="menu-logo">
+          <img
+            *ngIf="item.label === 'Inicio'"
+            src="assets/logito.png"
+            alt="Inicio"
+            class="menu-logo"
+          />
           <span *ngIf="item.label !== 'Inicio'">{{ item.label }}</span>
         </a>
       </li>
-    </ul>
-  </nav>
-  
+    </ng-container>
+    <li *ngIf="isLoggedIn()" class="ml-auto">
+      <div class="rightNav">
+        <span>Bienvenido, <strong>{{ getName() }}</strong></span>
+        <a (click)="logout()">Cerrar sesión</a>
+      </div>
+    </li>
+    <li *ngIf="!isLoggedIn()" class="ml-auto">
+      <a [routerLink]="'/login'">Iniciar sesión</a>
+    </li>
+  </ul>
+</nav>

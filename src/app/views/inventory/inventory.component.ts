@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InventoryService } from '../../services/inventory.service';
+import { Router } from '@angular/router';
 
 interface Product {
   sku: string;
@@ -22,9 +23,16 @@ export class InventoryComponent implements OnInit {
   showForm = false;
   isEdit = false;
 
-  constructor(private inventoryService: InventoryService) {}
+  constructor(
+    private inventoryService: InventoryService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    if (!sessionStorage.getItem('token')) {
+      this.router.navigateByUrl('/');
+    }
+
     this.inventoryService.getInventory().subscribe((data: Product[]) => {
       this.products = data;
     });

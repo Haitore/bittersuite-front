@@ -8,14 +8,27 @@ import { Component } from '@angular/core';
 export class MenuComponent {
   menuItems: { label: string, link: string }[] = [
     { label: 'Inicio', link: '/' },
-    { label: 'Ventas', link: '/' },
-    { label: 'Inventario', link: '/' },
-    { label: 'Tiendas', link: '/' },
-    { label: 'Cerrar sesion', link: '/' }
+    { label: 'Ventas', link: '/sales' },
+    { label: 'Inventario', link: '/inventory' },
+    { label: 'Tiendas', link: '/stores' },
   ];
 
-  getMenuClass(index: number): string {
-    const classes = [ 'border-primary'];
-    return classes[index % classes.length];
+  isLoggedIn(): boolean {
+    return !!sessionStorage.getItem('token'); 
+  }
+
+  getName(): string | null {
+    return sessionStorage.getItem('name');
+  }
+
+  hasRoleOne(): boolean {
+    const role = sessionStorage.getItem('role');
+    return role === '1';
+  }
+
+  logout(): void {
+    sessionStorage.removeItem('token'); 
+    sessionStorage.removeItem('role'); 
+    sessionStorage.removeItem('name'); 
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { InventoryService } from '../../services/inventory.service';
 import { SalesService } from '../../services/sales.service';
+import { Router } from '@angular/router';
 
 interface Product {
   sku: string;
@@ -45,10 +46,15 @@ export class AddSaleComponent implements OnInit {
 
   constructor(
     private inventoryService: InventoryService,
-    private salesService: SalesService
+    private salesService: SalesService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    if (!sessionStorage.getItem('token')) {
+      this.router.navigateByUrl('/');
+    }
+
     this.role = parseInt(sessionStorage.getItem('role') || '0', 10);
 
     this.inventoryService.getInventory().subscribe((data: Product[]) => {

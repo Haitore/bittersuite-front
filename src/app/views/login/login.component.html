@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center h-100">
-  <div class="card col-md-5 col-sm-6 col-11 mx-auto p-4">
+  <div class="card col-md-5 col-sm-6 col-11 mx-auto p-4 mt-5">
     <h2 class="text-center">Iniciar sesion</h2>
     <div class="mb-3 mt-4">
       <label class="form-label">Correo electrónico</label>
@@ -24,7 +24,7 @@
     <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
       {{ errorMessage }}
     </div>
-    <button type="button" (click)="login()" class="btn btn-success mt-4">
+    <button type="button" (click)="login()" class="btn btn-secondary mt-4">
       Iniciar sesión
     </button>
   </div>

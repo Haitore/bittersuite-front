@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { InventoryService } from '../../services/inventory.service';
 import { StoresService } from '../../services/stores.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
@@ -27,10 +28,15 @@ export class AddProductComponent implements OnInit {
 
   constructor(
     private inventoryService: InventoryService,
-    private storeService: StoresService
+    private storeService: StoresService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    if (!sessionStorage.getItem('token')) {
+      this.router.navigateByUrl('/');
+    }
+
     this.role = parseInt(sessionStorage.getItem('role') || '0', 10);
 
     if (this.role === 1) {
