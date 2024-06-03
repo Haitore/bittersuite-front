@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReportsComponent } from './views/reports/reports.component';
@@ -18,6 +17,9 @@ import { StoresService } from './services/stores.service';
 import { InventoryComponent } from './views/inventory/inventory.component';
 import { AddProductComponent } from './views/add-product/add-product.component';
 import { UpdateProductComponent } from './views/update-product/update-product.component';
+import { HomeComponent } from './views/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,9 @@ import { UpdateProductComponent } from './views/update-product/update-product.co
     InventoryComponent,
     AddProductComponent,
     UpdateProductComponent,
+    AppComponent,
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,12 @@ import { UpdateProductComponent } from './views/update-product/update-product.co
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    AppRoutingModule,
+    FormsModule,
+    CarouselModule.forRoot()
   ],
+
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     SalesService,
     {
