@@ -1,0 +1,23 @@
+<div class="container-fluid px-3 py-2 black">
+  <div class="row no-gutters">
+    <div class="col-md-6 text-white py-4 left">
+      <img src="assets/logito.png" alt="logo">
+    </div>
+    <div class="col-md-6 bg-light">
+      <div class="carousel-container">
+        <carousel [interval]="0" [showIndicators]="true" #carousel>
+          <slide *ngFor="let image of images">
+            <img [src]="image" alt="Slide Image">
+          </slide>
+        </carousel>
+      </div>
+    </div>
+  </div>
+  <div class="row flex-grow-1">
+    <div class="col-md-12 text-white py-4 bottom mt-5">
+      <h5>Acerca de nosotros</h5>
+      <p>Somos una empresa con más de 20 sucursales distribuidas en todo el mundo, llevamos la moda a cada rincón del país y en cualquier estilo.</p>
+      <p>¿Siguenos en nuestras redes sociales para no perderte de ninguna actualización!</p> <br><br>
+    </div>
+  </div>
+</div>

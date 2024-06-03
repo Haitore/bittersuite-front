@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './views/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
@@ -16,10 +16,11 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, // Añade FormsModule aquí
-    CarouselModule.forRoot()  // Importar el módulo del carrusel
+    FormsModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

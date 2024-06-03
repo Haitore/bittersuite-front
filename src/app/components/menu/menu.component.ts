@@ -8,9 +8,10 @@ import { Component } from '@angular/core';
 export class MenuComponent {
   menuItems: { label: string, link: string }[] = [
     { label: 'Inicio', link: '/' },
-    { label: 'ventas', link: '/ventas' },
-    { label: 'Inventario', link: '/Inventario' },
-    { label: 'Cerrar sesion', link: '/cerrar_sesion' }
+    { label: 'Ventas', link: '/' },
+    { label: 'Inventario', link: '/' },
+    { label: 'Tiendas', link: '/' },
+    { label: 'Cerrar sesion', link: '/' }
   ];
 
   getMenuClass(index: number): string {

@@ -27,7 +27,7 @@ nav {
   }
   
   nav ul li a:hover {
-    background-color: #495057; /* Slightly lighter for hover effect */
+    background-color: #8c9654
   }
   
   .ml-auto {
@@ -37,7 +37,7 @@ nav {
   .fixed-nav {
     top: 0;
     width: 100%;
-    z-index: 1000; /* Ensure it stays above other content */
+    z-index: 1000;
   }
   
   
