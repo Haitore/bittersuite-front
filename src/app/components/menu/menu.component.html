@@ -1,7 +1,6 @@
 <nav class="bg-main fixed-nav">
   <ul>
     <ng-container *ngFor="let item of menuItems; let i = index">
-      <!-- Mostrar el elemento solo si el valor de role es 1 -->
       <li
         *ngIf="item.label !== 'Tiendas' || hasRoleOne()"
         [ngClass]="{ 'ml-auto': item.label === 'Cerrar sesion' }"
