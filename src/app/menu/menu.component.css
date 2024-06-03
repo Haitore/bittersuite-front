@@ -1,0 +1,44 @@
+nav {
+    overflow: hidden;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li {
+    float: left;
+  }
+  
+  nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  nav ul li a img.menu-logo {
+    height: 30px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #495057; /* Slightly lighter for hover effect */
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  .fixed-nav {
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+  
+  

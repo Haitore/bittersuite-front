@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/* Main background color */
+.bg-main {
+    background-color: #5a651d;
+  }
+  
+  /* Secondary background color */
+  .bg-secondary {
+    background-color: #dee7ac;
+  }
+  
+  /* Text and heading color */
+  .text-primary {
+    color: #abc334;
+  }
+  
+  /* Active buttons and links color */
+  .btn-active {
+    background-color: #8c9654;
+    color: white; /* Assuming white text for contrast */
+  }
+  
+  /* Borders and separators color */
+  .border-primary {
+    border-color: #bebebe;
+  }
+  
