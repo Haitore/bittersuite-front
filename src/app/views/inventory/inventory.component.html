@@ -1,0 +1,186 @@
+<div class="d-flex">
+  <div class="w-100 pt-5">
+    <div
+      class="col-md-10 col-12 mx-auto mb-5 d-flex justify-content-between align-items-center"
+    >
+      <h1>Inventario</h1>
+      <div>
+        <a
+          type="button"
+          class="btn btn-secondary btn-md py-1 mx-1"
+          routerLink="/addproduct"
+          >Agregar producto</a
+        >
+      </div>
+    </div>
+    <div class="card col-md-10 col-12 mx-auto p-4">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">SKU</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Ropa</th>
+            <th scope="col">Tipo de ropa</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Género</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products" [attr.data-sku]="product.sku">
+            <td>{{ product.sku }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.clothe }}</td>
+            <td>{{ product.clothe_type }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.stock }}</td>
+            <td>{{ product.genre }}</td>
+            <td>
+              <button class="btn btn-success btn-md py-1 mx-1">Editar</button>
+              <button
+                class="btn btn-danger btn-md py-1 mx-1"
+                (click)="deleteProduct(product.sku)"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!--<div>
+  <div class="content container-fluid my-4">
+    <div class="container">
+      <h2 class="mb-4">Página de Inventario</h2>
+      <div class="mb-3">
+        <button class="btn btn-primary" (click)="showProductForm()">
+          Agregar producto nuevo
+        </button>
+      </div>
+
+      <div class="table-responsive mb-4">
+        <table class="table table-striped" id="product-table">
+          <thead class="thead-dark">
+            <tr>
+              <th>SKU</th>
+              <th>Nombre</th>
+              <th>Ropa</th>
+              <th>Tipo de ropa</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Género</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products" [attr.data-sku]="product.sku">
+              <td>{{ product.sku }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.clothe }}</td>
+              <td>{{ product.clothe_type }}</td>
+              <td>{{ product.price }}</td>
+              <td>{{ product.stock }}</td>
+              <td>{{ product.genre }}</td>
+              <td>
+                <button
+                  class="btn btn-info btn-sm"
+                  (click)="editProduct(product)"
+                >
+                  Editar
+                </button>
+                <button
+                  class="btn btn-danger btn-sm"
+                  (click)="deleteProduct(product.sku)"
+                >
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+      <div class="form-container mt-4 p-4 border rounded" *ngIf="showForm">
+        <div class="form-group">
+          <label for="sku">SKU</label>
+          <input
+            id="sku"
+            class="form-control"
+            type="text"
+            [(ngModel)]="currentProduct.sku"
+            [readonly]="isEdit"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input
+            id="name"
+            class="form-control"
+            type="text"
+            [(ngModel)]="currentProduct.name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="clothe">Ropa</label>
+          <select
+            id="clothe"
+            class="form-control"
+            [(ngModel)]="currentProduct.clothe"
+          >
+            <option value="Top">Top</option>
+            <option value="Bottom">Bottom</option>
+            <option value="Calzado">Calzado</option>
+            <option value="Accesorio">Accesorio</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="clothe_type">Tipo de ropa</label>
+          <input
+            id="clothe_type"
+            class="form-control"
+            type="text"
+            [(ngModel)]="currentProduct.clothe_type"
+          />
+        </div>
+        <div class="form-group">
+          <label for="price">Precio</label>
+          <input
+            id="price"
+            class="form-control"
+            type="number"
+            [(ngModel)]="currentProduct.price"
+          />
+        </div>
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input
+            id="stock"
+            class="form-control"
+            type="number"
+            [(ngModel)]="currentProduct.stock"
+          />
+        </div>
+        <div class="form-group">
+          <label for="genre">Género</label>
+          <input
+            id="genre"
+            class="form-control"
+            type="text"
+            [(ngModel)]="currentProduct.genre"
+          />
+        </div>
+        <button class="btn btn-primary" (click)="saveProduct()">Guardar</button>
+        <button class="btn btn-secondary" (click)="cancelForm()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
