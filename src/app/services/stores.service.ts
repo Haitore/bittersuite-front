@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class StoresService {
 
-  private baseUrl = 'http://localhost:3000/api'
+  private baseUrl = 'https://bittersuite-back.onrender.com/api'
 
   constructor(private http: HttpClient) { }
 
